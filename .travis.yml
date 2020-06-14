@@ -8,3 +8,6 @@ before_install:
     
 install:
     - make install
+    
+script:
+    - make check
