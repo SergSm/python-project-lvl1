@@ -1,12 +1,13 @@
-"""main module."""
+"""Main module."""
 
-from .cli import welcome_user
+from brain_games.scripts import cli
 
 
 def main():
-    """Print data."""
     print('Welcome to the Brain Games!')
-    welcome_user()
+    print("Answer "'yes'" if number even otherwise answer "'no'".")
+    username = cli.welcome_user()
+    return username
 
 
 if __name__ == '__main__':
