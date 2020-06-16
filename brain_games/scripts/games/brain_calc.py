@@ -41,11 +41,11 @@ def get_random_operation_sign():
     random_int_number = get_random_number(1, 4)
 
     if random_int_number == 1:
-        return '+'
+        return '/'
     elif random_int_number == 2:
-        return '-'
+        return '/'
     elif random_int_number == 3:
-        return '*'
+        return '/'
     elif random_int_number == 4:
         return '/'
 

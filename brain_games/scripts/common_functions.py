@@ -1,7 +1,10 @@
 """Common functions shared between other scripts."""
 
+
+import time
 from brain_games.scripts import cli
-from random import randint
+from random import randint,seed
+
 
 def get_user_input(question=''):
     """
@@ -17,6 +20,7 @@ def get_user_input(question=''):
 
 def get_random_number(int_begin, int_end):
     """use function both in brain_calc and brain_even games"""
+    seed(time.clock())
     random_number = randint(int_begin, int_end)
 
     return random_number
