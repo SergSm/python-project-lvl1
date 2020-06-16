@@ -1,8 +1,8 @@
 """Check for parity."""
 
-from brain_games.scripts import brain_games, cli
+from brain_games.scripts import brain_games
+from brain_games.scripts.common_functions import *
 from random import randint
-
 
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
@@ -14,21 +14,20 @@ def play_parity_check_game():
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
         random_number = randint(1, 20)
-        print("Question: ", random_number)
-        user_answer = cli.ask_for_user_input()
+        user_answer = get_user_input(question=random_number)
 
         user_is_right = is_answer_correct(random_number, user_answer)
 
         if user_is_right:
-            print('Correct!')
+            print_great_success()
             successful_loops += 1
         else:
-            print('\'yes\' is wrong answer ;(. Correct answer was \'no\'.')
-            print('Let\'s try again, !')
+            print_fail(wrong_answer='yes',
+                       correct_answer='no')
             break
 
     if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
-        print('Congratulations, ', username, '!')
+        print_cheers_to(username)
 
 
 def is_answer_correct(number, user_answer):
