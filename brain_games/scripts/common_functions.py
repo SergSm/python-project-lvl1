@@ -3,7 +3,7 @@
 
 import time
 from brain_games.scripts import cli
-from random import randint,seed
+from random import randint, seed
 
 
 def get_user_input(question=''):
@@ -39,7 +39,8 @@ def print_great_success():
 
 
 def print_fail(wrong_answer, correct_answer):
-    print(' \'', wrong_answer, '\' is wrong answer ;(. Correct answer was \'', correct_answer, '\'')
+    print(' \'', wrong_answer, '\' is wrong answer ;(. '
+                               'Correct answer was \'', correct_answer, '\'')
     print('Let\'s try again, !')
 
 

@@ -1,7 +1,9 @@
 """Calculator game."""
 
 from brain_games.scripts import brain_games
-from brain_games.scripts.common_functions import *
+from brain_games.scripts.common_functions import get_user_input,\
+    get_random_number, it_casts_to_int, \
+    print_great_success, print_fail, print_cheers_to
 
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
@@ -16,9 +18,13 @@ def play_calc_game():
         random_number1 = get_random_number(1, 20)
         random_number2 = get_random_number(1, 20)
 
-        question_text = str(random_number1) + str(random_operation) + str(random_number2)
+        question_text = ''.join(random_number1,
+                                random_operation,
+                                random_number2)
 
-        arithmetic_result = float(safe_arithmetic_execution(random_operation, random_number1, random_number2))
+        arithmetic_result = float(safe_arithmetic_execution(random_operation,
+                                                            random_number1,
+                                                            random_number2))
 
         user_answer = get_user_input(question=question_text)
 
