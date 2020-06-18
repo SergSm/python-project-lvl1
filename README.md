@@ -6,4 +6,9 @@
 
 [![asciicast](https://asciinema.org/a/9TOAYUdkuzKiPckW636Wf4XwH.svg)](https://asciinema.org/a/9TOAYUdkuzKiPckW636Wf4XwH)
 
+
+"Calculator" game
+
+[![asciicast](https://asciinema.org/a/dbDE7gyUiqOsinLEpfVoRzxpi.svg)](https://asciinema.org/a/dbDE7gyUiqOsinLEpfVoRzxpi)
+
 "# python-project-lvl1" 
