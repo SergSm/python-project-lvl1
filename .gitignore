@@ -1,5 +1,7 @@
 ./git
 *.idea/*
+.idea/
+.idea/*
 brain_games/.idea/*
 .venv/
 __pycache__/*

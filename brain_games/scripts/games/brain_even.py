@@ -2,7 +2,7 @@
 
 from brain_games.scripts import brain_games
 from brain_games.scripts.common_functions import *
-from random import randint
+
 
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
@@ -13,7 +13,7 @@ def play_parity_check_game():
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        random_number = randint(1, 20)
+        random_number = get_random_number(1, 20)
         user_answer = get_user_input(question=random_number)
 
         user_is_right = is_answer_correct(random_number, user_answer)

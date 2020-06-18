@@ -39,7 +39,7 @@ def print_great_success():
 
 
 def print_fail(wrong_answer, correct_answer):
-    print('\'''', wrong_answer ,'''\' is wrong answer ;(. Correct answer was \'''', correct_answer) # ,'' \'.') # TODO
+    print(' \'', wrong_answer, '\' is wrong answer ;(. Correct answer was \'', correct_answer, '\'')
     print('Let\'s try again, !')
 
 
