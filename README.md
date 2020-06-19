@@ -11,4 +11,9 @@
 
 [![asciicast](https://asciinema.org/a/dbDE7gyUiqOsinLEpfVoRzxpi.svg)](https://asciinema.org/a/dbDE7gyUiqOsinLEpfVoRzxpi)
 
+
+"Greatest common divisor" game
+
+[![asciicast](https://asciinema.org/a/9g26nT8D2ITKm9j8r6KumRwTG.svg)](https://asciinema.org/a/9g26nT8D2ITKm9j8r6KumRwTG)
+
 "# python-project-lvl1" 
