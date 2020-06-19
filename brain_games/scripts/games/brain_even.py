@@ -10,7 +10,8 @@ NUMBER_OF_SUCCESSFUL_TRIES = 3
 
 
 def play_parity_check_game():
-    username = brain_games.main()
+    username = brain_games.main('Answer \"yes\" if number even'
+                                ' otherwise answer \"no\".')
 
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop

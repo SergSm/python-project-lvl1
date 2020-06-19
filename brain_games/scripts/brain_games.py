@@ -3,9 +3,11 @@
 from brain_games.scripts import cli
 
 
-def main():
+def main(game_specific_greeting):
     print('Welcome to the Brain Games!')
-    print('Answer \'yes\' if number even otherwise answer \'no\'.')
+
+    print(game_specific_greeting)
+
     username = cli.welcome_user()
     return username
 
