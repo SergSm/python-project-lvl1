@@ -2,6 +2,7 @@
 *.idea/*
 .idea/
 .idea/*
+__pycache__/
 brain_games/.idea/*
 .venv/
 __pycache__/*
