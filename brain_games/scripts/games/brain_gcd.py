@@ -9,8 +9,6 @@ from math import gcd
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
 
-# TODO: TOML entrypoint
-
 def play_gcd():
     username = brain_games.main('Find the greatest common'
                                 'divisor of given numbers.')
