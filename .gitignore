@@ -1,12 +1,7 @@
 ./git
-*.idea/*
 .idea/
-.idea/*
 __pycache__/
-brain_games/.idea/*
 .venv/
 __pycache__/*
-scripts/__pycache__/*
 .pyc
-__pycache__
 activate_env.bat
