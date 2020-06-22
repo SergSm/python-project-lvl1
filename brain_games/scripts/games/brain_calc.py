@@ -69,7 +69,7 @@ def safe_arithmetic_execution(operation, *numbers):
 
     for number in numbers:
         if iteration > 0 and it_casts_to_int(number):  # check if param casts to integer
-            accumulator += apply_operation(operation, accumulator, number)
+            accumulator = apply_operation(operation, accumulator, number)
         iteration += 1
 
     return accumulator
@@ -83,12 +83,16 @@ def apply_operation(operation, accumulator, number):
     elif operation == '*':
         accumulator = accumulator * number
     elif operation == '/':
-        try:
-            accumulator = accumulator / number
-            accumulator = apply_rounding(accumulator)
-        except ValueError:
-            return False
+        accumulator = apply_division(accumulator, number)
+    return accumulator
 
+
+def apply_division(accumulator, number):
+    try:
+        accumulator = accumulator / number
+        accumulator = apply_rounding(accumulator)
+    except ValueError:
+        return False
     return accumulator
 
 
