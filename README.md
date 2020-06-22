@@ -24,7 +24,7 @@
 [![asciicast](https://asciinema.org/a/bqLDOXBD2jLc0u0vQfbBlNygG.svg)](https://asciinema.org/a/bqLDOXBD2jLc0u0vQfbBlNygG)
 
 
-"Brain prime" games
+"Brain prime" game
 
 [![asciicast](https://asciinema.org/a/2tZWaF3wVilrKEHEQrPzBciJ5.svg)](https://asciinema.org/a/2tZWaF3wVilrKEHEQrPzBciJ5)
 
