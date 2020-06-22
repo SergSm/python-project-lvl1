@@ -30,8 +30,8 @@ def play_gcd():
             print_great_success()
             successful_loops += 1
         else:
-            print_fail(wrong_answer=user_answer,
-                       correct_answer=gcd_result)
+            print_fail(wrong_answer='yes',
+                       correct_answer='no')
             break
 
     if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
