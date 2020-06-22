@@ -22,10 +22,8 @@ def play_brain_prime():
         user_answer = get_user_input(question=random_number)
         user_is_right = is_answer_correct(is_prime_number,
                                           user_input=user_answer)
-        if is_prime_number:
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
+
+        correct_answer = get_text_answer(is_prime_number)
 
         if user_is_right:
             print_great_success()
@@ -37,6 +35,13 @@ def play_brain_prime():
 
     if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
         print_cheers_to(username)
+
+
+def get_text_answer(is_prime_number):
+    if is_prime_number:
+        return 'yes'
+    else:
+        return 'no'
 
 
 def is_answer_correct(is_prime_number, user_input):
@@ -54,20 +59,21 @@ def is_prime(number):
     number_is_divisible = False
 
     if number != 1:     # prime number is always greater than 1
-        number_is_divisible = check_for_divisibility(number)
+        number_is_divisible = not is_divisible(number)
     else:
-        number_is_divisible = False # 1 is a special case
+        number_is_divisible = False  # 1 is a special case
 
     return number_is_divisible
 
 
-def check_for_divisibility(number):
+def is_divisible(number):
+
+    divisibiliy_trigger = False
     for i in range(2, number):
         if (number % i) == 0:
-            return True
+            divisibiliy_trigger = True
 
-    return False
-
+    return divisibiliy_trigger
 
 
 if __name__ == "__main__":
