@@ -8,7 +8,7 @@ from brain_games.scripts.common_functions import get_user_input,\
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
 
-def play_arithm_progression_game():
+def play_brain_progression_game():
     username = brain_games.main('What number is missing in the progression?')
 
     successful_loops = 0
@@ -17,14 +17,16 @@ def play_arithm_progression_game():
         progression_length = 10
         progression_step = get_random_number(1, 10)
         start_number = get_random_number(1, 10)
-        position_of_missing_element = get_random_number(0, progression_length - 1)
+        position_of_missing_element = get_random_number(0,
+                                                        progression_length - 1)
 
         arithm_progression = get_arithmetic_progression(progression_length,
                                                         progression_step,
                                                         start_number)
 
         missing_element = arithm_progression[position_of_missing_element]
-        question_text = get_question_text(arithm_progression, position_of_missing_element)
+        question_text = get_question_text(arithm_progression,
+                                          position_of_missing_element)
 
         user_answer = get_user_input(question=question_text)
         user_is_right = is_answer_correct(missing_element, user_answer)
@@ -45,7 +47,7 @@ def get_arithmetic_progression(length, step, start_number):
 
     result_list = []
 
-    # the simpliest case with the only one number
+    # the simplest case with the only one number
     if length == 1:
         result_list.append(start_number)
         return result_list
@@ -83,4 +85,4 @@ def is_answer_correct(correct_answer, user_input):
 
 
 if __name__ == "__main__":
-    play_arithm_progression_game()
+    play_brain_progression_game()
