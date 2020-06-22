@@ -65,22 +65,29 @@ def safe_arithmetic_execution(operation, *numbers):
     """applies operation to numbers*"""
 
     accumulator = numbers[0]  # assign to the very first value
+    iteration = 0
 
-    for idx, number in enumerate(numbers):
-        if idx > 0:  # skip first iteration
-            if it_casts_to_int(number):  # check if param casts to integer
-                if operation == '+':
-                    accumulator = accumulator + number
-                elif operation == '-':
-                    accumulator = accumulator - number
-                elif operation == '*':
-                    accumulator = accumulator * number
-                elif operation == '/':
-                    try:
-                        accumulator = accumulator / number
-                        accumulator = apply_rounding(accumulator)
-                    except ValueError:
-                        return False
+    for number in numbers:
+        if iteration > 0 and it_casts_to_int(number):  # check if param casts to integer
+            accumulator += apply_operation(operation, accumulator, number)
+        iteration += 1
+
+    return accumulator
+
+
+def apply_operation(operation, accumulator, number):
+    if operation == '+':
+        accumulator = accumulator + number
+    elif operation == '-':
+        accumulator = accumulator - number
+    elif operation == '*':
+        accumulator = accumulator * number
+    elif operation == '/':
+        try:
+            accumulator = accumulator / number
+            accumulator = apply_rounding(accumulator)
+        except ValueError:
+            return False
 
     return accumulator
 
