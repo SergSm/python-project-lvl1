@@ -52,18 +52,22 @@ def is_answer_correct(is_prime_number, user_input):
 def is_prime(number):
 
     number_is_divisible = False
-    if number != 1:     # prime number is always greater than 1
-        for i in range(2, number):
-            if (number % i) == 0:
-                number_is_divisible = True
-                break
-    else:
-        return False  # 1 is a special case
 
-    if number_is_divisible:
-        return False
+    if number != 1:     # prime number is always greater than 1
+        number_is_divisible = check_for_divisibility(number)
     else:
-        return True
+        number_is_divisible = False # 1 is a special case
+
+    return number_is_divisible
+
+
+def check_for_divisibility(number):
+    for i in range(2, number):
+        if (number % i) == 0:
+            return True
+
+    return False
+
 
 
 if __name__ == "__main__":
