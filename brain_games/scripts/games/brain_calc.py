@@ -65,12 +65,10 @@ def safe_arithmetic_execution(operation, *numbers):
     """applies operation to numbers*"""
 
     accumulator = numbers[0]  # assign to the very first value
-    iteration = 0
 
-    for number in numbers:
-        if iteration > 0 and it_casts_to_int(number):  # check if param casts to integer
+    for number in numbers[1:]:
+        if it_casts_to_int(number):  # check if param casts to integer
             accumulator = apply_operation(operation, accumulator, number)
-        iteration += 1
 
     return accumulator
 
