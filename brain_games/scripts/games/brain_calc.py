@@ -74,21 +74,15 @@ def safe_arithmetic_execution(operation, *numbers):
 
 
 def apply_operation(operation, accumulator, number):
-    if operation == '+':
-        accumulator = accumulator + number
-    elif operation == '-':
-        accumulator = accumulator - number
-    elif operation == '*':
-        accumulator = accumulator * number
-    elif operation == '/':
-        accumulator = apply_division(accumulator, number)
-    return accumulator
-
-
-def apply_division(accumulator, number):
     try:
-        accumulator = accumulator / number
-        accumulator = apply_rounding(accumulator)
+        if operation == '+':
+            accumulator = accumulator + number
+        elif operation == '-':
+            accumulator = accumulator - number
+        elif operation == '*':
+            accumulator = accumulator * number
+        elif operation == '/':
+            accumulator = apply_rounding(accumulator / number)
     except ValueError:
         return False
     return accumulator

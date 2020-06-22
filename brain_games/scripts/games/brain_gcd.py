@@ -1,7 +1,7 @@
 from brain_games.scripts import brain_games
 from brain_games.scripts.common_functions import get_user_input,\
     get_random_number, it_casts_to_int, \
-    print_great_success, print_fail, print_cheers_to
+    print_great_success, print_fail, print_cheers_to, is_answer_correct
 
 from math import gcd
 
@@ -36,19 +36,6 @@ def play_gcd():
 
     if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
         print_cheers_to(username)
-
-
-def is_answer_correct(gcd_right, user_input):
-
-    if it_casts_to_int(user_input):
-        int_user_input = int(user_input)
-    else:
-        return False
-
-    if int_user_input == gcd_right:
-        return True
-    else:
-        return False
 
 
 if __name__ == "__main__":

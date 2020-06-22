@@ -46,3 +46,15 @@ def print_fail(wrong_answer, correct_answer):
 
 def print_cheers_to(username):
     print('Congratulations, ', username, '!')
+
+
+def is_answer_correct(correct_answer, user_input):
+    if it_casts_to_int(user_input):
+        int_user_input = int(user_input)
+    else:
+        return False
+
+    if correct_answer == int_user_input:
+        return True
+    else:
+        return False

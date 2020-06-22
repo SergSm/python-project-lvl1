@@ -39,18 +39,6 @@ def play_brain_prime():
         print_cheers_to(username)
 
 
-def get_question_text(list_of_values, exclude_element):
-
-    text = ""
-    for x in range(0, len(list_of_values)-1):
-        if x == exclude_element:
-            text += '..' + ' '
-        else:
-            text += str(list_of_values[x]) + ' '
-
-    return text
-
-
 def is_answer_correct(is_prime_number, user_input):
 
     if is_prime_number and user_input == 'yes':
