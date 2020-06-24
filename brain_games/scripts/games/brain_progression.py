@@ -2,8 +2,8 @@
 
 from brain_games.scripts import brain_games
 from brain_games.scripts.common_functions import get_user_input,\
-    get_random_number, it_casts_to_int, \
-    print_great_success, print_fail, print_cheers_to, is_answer_correct
+    get_random_number, print_great_success, \
+    print_fail, print_cheers_to, is_answer_correct
 
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 

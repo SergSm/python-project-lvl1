@@ -3,9 +3,6 @@ name = "SergSm_brain_games"
 version = "0.6.11"
 description = "serg sm brain games"
 authors = ["Your Name <you@example.com>"]
-classifiers = [
-    "Topic :: Software Development :: Build Tools",
-    "Topic :: Software Development :: Libraries :: Python Modules"
     
 packages = [
     {include = "brain_games"},

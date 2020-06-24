@@ -29,12 +29,7 @@ def play_calc_game():
         user_answer = get_user_input(question=question_text)
 
         # if user's input is not a number then its a wrong answer
-        try:
-            user_answer = float(user_answer)
-            user_answer = apply_rounding(user_answer)
-            user_is_right = is_answer_correct(arithmetic_result, user_answer)
-        except ValueError:
-            user_is_right = False
+        user_is_right = handle_user_input(user_answer, arithmetic_result)
 
         if user_is_right:
             print_great_success()
@@ -97,6 +92,17 @@ def is_answer_correct(correct_answer, user_answer):
         return True
     else:
         return False
+
+
+def handle_user_input(user_answer, arithmetic_result):
+    try:
+        user_answer = float(user_answer)
+        user_answer = apply_rounding(user_answer)
+        user_is_right = is_answer_correct(arithmetic_result, user_answer)
+    except ValueError:
+        user_is_right = False
+
+    return user_is_right
 
 
 if __name__ == "__main__":
