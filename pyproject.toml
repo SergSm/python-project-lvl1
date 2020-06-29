@@ -3,6 +3,11 @@ name = "SergSm_brain_games"
 version = "0.6.14"
 description = "serg sm brain games"
 authors = ["Your Name <you@example.com>"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+]
+
+repository = 'https://github.com/SergSm/python-project-lvl1'
     
 packages = [
     {include = "brain_games"},
