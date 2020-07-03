@@ -1,7 +1,7 @@
 """Calculator game."""
 
 from brain_games.scripts import brain_games
-from brain_games.scripts.common_functions import get_user_input,\
+from brain_games.engine.common_functions import get_user_input,\
     get_random_number, it_casts_to_int, \
     print_great_success, print_fail, print_cheers_to
 
@@ -103,7 +103,3 @@ def handle_user_input(user_answer, arithmetic_result):
         user_is_right = False
 
     return user_is_right
-
-
-if __name__ == "__main__":
-    play_calc_game()

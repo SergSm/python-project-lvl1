@@ -1,7 +1,7 @@
 """Prime number game"""
 
 from brain_games.scripts import brain_games
-from brain_games.scripts.common_functions import get_user_input,\
+from brain_games.engine.common_functions import get_user_input,\
     get_random_number, print_great_success, print_fail, print_cheers_to
 
 
@@ -74,7 +74,3 @@ def is_divisible(number):
             divisibiliy_trigger = True
 
     return divisibiliy_trigger
-
-
-if __name__ == "__main__":
-    play_brain_prime()

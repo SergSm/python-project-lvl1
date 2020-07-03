@@ -1,5 +1,5 @@
 from brain_games.scripts import brain_games
-from brain_games.scripts.common_functions import get_user_input,\
+from brain_games.engine.common_functions import get_user_input,\
     get_random_number, print_great_success,\
     print_fail, print_cheers_to, is_answer_correct
 
@@ -36,7 +36,3 @@ def play_gcd():
 
     if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
         print_cheers_to(username)
-
-
-if __name__ == "__main__":
-    play_gcd()

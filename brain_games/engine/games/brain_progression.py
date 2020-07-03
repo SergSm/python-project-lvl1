@@ -1,7 +1,7 @@
 """Arithmetics progression game"""
 
 from brain_games.scripts import brain_games
-from brain_games.scripts.common_functions import get_user_input,\
+from brain_games.engine.common_functions import get_user_input,\
     get_random_number, print_great_success, \
     print_fail, print_cheers_to, is_answer_correct
 
@@ -70,7 +70,3 @@ def get_question_text(list_of_values, exclude_element):
             text += str(list_of_values[x]) + ' '
 
     return text
-
-
-if __name__ == "__main__":
-    play_brain_progression_game()
