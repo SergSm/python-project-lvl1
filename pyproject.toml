@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "SergSm_brain_games"
-version = "0.6.14"
+version = "0.6.15"
 description = "serg sm brain games"
 authors = ["Your Name <you@example.com>"]
 classifiers = [
