@@ -9,6 +9,10 @@ from brain_games.engine.common_functions import get_user_input,\
 NUMBER_OF_SUCCESSFUL_TRIES = 3
 
 
+def show_description():
+    print('What is the result of the expression?')
+
+
 def play_calc_game():
     username = brain_games.main('What is the result of the expression?')
 
