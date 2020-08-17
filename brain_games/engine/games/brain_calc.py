@@ -1,50 +1,39 @@
 """Calculator game."""
 
+from
+
 from brain_games.scripts import brain_games
 from brain_games.engine.common_functions import get_user_input,\
-    get_random_number, it_casts_to_int, \
-    print_great_success, print_fail, print_cheers_to
+    get_random_number, it_casts_to_int,
 
-
-NUMBER_OF_SUCCESSFUL_TRIES = 3
-
+OPERATIONS = ('+', '-', '*', '/')
 
 def show_description():
     print('What is the result of the expression?')
 
+def game_question():
+    return 'What is the result of the expression?'
 
-def play_calc_game():
-    username = brain_games.main('What is the result of the expression?')
 
-    successful_loops = 0
-    while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
+def get_question_answer():
+    random_operation = get_random_operation_sign()
+    random_number1 = get_random_number(1, 20)
+    random_number2 = get_random_number(1, 20)
 
-        random_operation = get_random_operation_sign()
-        random_number1 = get_random_number(1, 20)
-        random_number2 = get_random_number(1, 20)
+    question_text = str(random_number1) + random_operation
+    question_text += str(random_number2)
 
-        question_text = str(random_number1) + random_operation
-        question_text += str(random_number2)
+    arithmetic_result = float(safe_arithmetic_execution(random_operation,
+                                                        random_number1,
+                                                        random_number2))
 
-        arithmetic_result = float(safe_arithmetic_execution(random_operation,
-                                                            random_number1,
-                                                            random_number2))
+    result = {'question': question_text,
+              'right_answer': arithmetic_result,
+              }
 
-        user_answer = get_user_input(question=question_text)
+    return result
 
-        # if user's input is not a number then its a wrong answer
-        user_is_right = handle_user_input(user_answer, arithmetic_result)
 
-        if user_is_right:
-            print_great_success()
-            successful_loops += 1
-        else:
-            print_fail(wrong_answer=user_answer,
-                       correct_answer=arithmetic_result)
-            break
-
-    if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
-        print_cheers_to(username)
 
 
 def get_random_operation_sign():
@@ -87,8 +76,6 @@ def apply_operation(operation, accumulator, number):
     return accumulator
 
 
-def apply_rounding(number):
-    return round(number, 2)
 
 
 def is_answer_correct(correct_answer, user_answer):
@@ -98,12 +85,4 @@ def is_answer_correct(correct_answer, user_answer):
         return False
 
 
-def handle_user_input(user_answer, arithmetic_result):
-    try:
-        user_answer = float(user_answer)
-        user_answer = apply_rounding(user_answer)
-        user_is_right = is_answer_correct(arithmetic_result, user_answer)
-    except ValueError:
-        user_is_right = False
 
-    return user_is_right

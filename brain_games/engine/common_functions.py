@@ -34,20 +34,6 @@ def it_casts_to_int(s):
         return False
 
 
-def print_great_success():
-    print('Correct!')
-
-
-def print_fail(wrong_answer, correct_answer):
-    print(' \'', wrong_answer, '\' is wrong answer ;(. '
-                               'Correct answer was \'', correct_answer, '\'')
-    print('Let\'s try again, !')
-
-
-def print_cheers_to(username):
-    print('Congratulations, ', username, '!')
-
-
 def is_answer_correct(correct_answer, user_input):
     if it_casts_to_int(user_input):
         int_user_input = int(user_input)
