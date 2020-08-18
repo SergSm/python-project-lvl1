@@ -3,6 +3,9 @@
 """Main module for the game logic flow.
 use it as a substitute for a brain_games.py"""
 
+import time
+
+from random import randint, seed, choice
 
 from brain_games.scripts.cli import ask
 from brain_games.engine.games import brain_calc, \
@@ -26,33 +29,40 @@ def start_game(game_name):
     username = ask("May I have your name?")
     print('Hello,', username)  # greetings
 
-    victory = game_loop(game_name)
+    game_context = {}  # param to transfer session specific data like correct and wrong answer
+    victory = execute_game_loop(game_name, game_context)
 
     if victory:
         print_cheers_to(username)
+    else:
+        print_fail(wrong_answer=game_context.wrong_answer,
+                   correct_answer=game_context.right_answer)
 
 
-def game_loop(game_name):
+def execute_game_loop(game_name, game_context):
     """
-    Execute common game logic flow
+    Execute common game logic flow and return the games session result
     :param game_name: the game logic module
-    :return:
+    :return: bool
     """
 
     victory = True
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        question_answer = game_name.get_question_answer()
+        question_answer = game_name.get_question__right_answer()
 
         print("Question: ", question_answer.question)  # show the session question
-        user_answer = ask('Your answer: ')  # get the user answer to the game session
+        user_answer = ask('Your answer: ')  # get user answer to the game session
 
         if answer_is_correct(user_answer, question_answer.right_answer):
             successful_loops += 1
-        else:
-            print_fail(wrong_answer=user_answer,
-                       correct_answer=question_answer.right_answer)
+        else:  # transfer the session specific info to the previous function using context variable
+            game_context = {'wrong_answer': user_answer,
+                            'correct_answer': question_answer.right_answer,
+                            }
+
+            victory = False  # lose
 
     return victory
 
@@ -75,16 +85,11 @@ def print_cheers_to(username):
 # endregion
 
 
-#######################################################################################
-
+# region answer_check
 
 def answer_is_correct(input_answer, right_answer):
     filtered_answer = filter_user_input(input_answer)
     return str(right_answer) == str(filtered_answer)
-
-
-def apply_rounding(number):
-    return round(number, 2)
 
 
 def filter_user_input(user_answer):
@@ -96,6 +101,33 @@ def filter_user_input(user_answer):
 
     return user_answer
 
+# endregion
 
 
+# region math_and_rounding
 
+def apply_rounding(number):
+    """common float number rounding function """
+    return round(number, 2)
+
+
+def get_random_number(int_begin, int_end):
+    """use function both in brain_calc and brain_even games"""
+    seed(time.clock())
+    random_number = randint(int_begin, int_end)
+
+    return random_number
+
+
+def get_random_element(the_list):
+    return choice(the_list)
+
+
+def it_casts_to_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+# endregion
