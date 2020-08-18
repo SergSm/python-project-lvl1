@@ -2,7 +2,6 @@
 
 """Calculator game run script"""
 
-
 from brain_games.engine.main import start_game
 from brain_games.engine.games import brain_calc
 

@@ -8,8 +8,8 @@ import time
 from random import randint, seed, choice
 
 from brain_games.scripts.cli import ask
-from brain_games.engine.games import brain_calc, \
-    brain_even, brain_gcd, brain_prime, brain_progression
+from brain_games.engine.games import brain_calc#, \
+    #brain_even, brain_gcd, brain_prime, brain_progression
 
 COMMON_INTRO_TEXT = 'Welcome to the Brain Games!'
 
@@ -26,20 +26,20 @@ def start_game(game_name):
     print(COMMON_INTRO_TEXT)  # constant intro
     brain_calc.show_description()  # show the task of the game
 
-    username = ask("May I have your name?")
+    username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
 
-    game_context = {}  # param to transfer session specific data like correct and wrong answer
-    victory = execute_game_loop(game_name, game_context)
+    victory, game_context = execute_game_loop(game_name)
 
     if victory:
         print_cheers_to(username)
     else:
-        print_fail(wrong_answer=game_context.wrong_answer,
-                   correct_answer=game_context.right_answer)
+        print_fail(wrong_answer=game_context['wrong_answer'],
+                   correct_answer=game_context['correct_answer'],
+                   username=username)
 
 
-def execute_game_loop(game_name, game_context):
+def execute_game_loop(game_name):
     """
     Execute common game logic flow and return the games session result
     :param game_name: the game logic module
@@ -52,19 +52,22 @@ def execute_game_loop(game_name, game_context):
 
         question_answer = game_name.get_question__right_answer()
 
-        print("Question: ", question_answer.question)  # show the session question
+        print("Question: ", question_answer['question'])  # show the session question
         user_answer = ask('Your answer: ')  # get user answer to the game session
 
-        if answer_is_correct(user_answer, question_answer.right_answer):
+        # fill in th e context
+        game_context = {'wrong_answer': user_answer,
+                        'correct_answer': question_answer['right_answer'],
+                        }
+
+        if answer_is_correct(user_answer, question_answer['right_answer']):
             successful_loops += 1
         else:  # transfer the session specific info to the previous function using context variable
-            game_context = {'wrong_answer': user_answer,
-                            'correct_answer': question_answer.right_answer,
-                            }
 
             victory = False  # lose
+            break
 
-    return victory
+    return victory, game_context
 
 
 # region game_events_prints
@@ -73,10 +76,10 @@ def print_great_success():
     print('Correct!')
 
 
-def print_fail(wrong_answer, correct_answer):
+def print_fail(wrong_answer, correct_answer, username):
     print(' \'', wrong_answer, '\' is wrong answer ;(. '
                                'Correct answer was \'', correct_answer, '\'')
-    print('Let\'s try again, !')
+    print('Let\'s try again, ', username, '!')
 
 
 def print_cheers_to(username):
