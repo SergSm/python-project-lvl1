@@ -10,11 +10,9 @@ def show_description():
     print('What is the result of the expression?')
 
 
-def game_question():
-    return 'What is the result of the expression?'
-
-
 def get_question__right_answer():
+
+    # get question
     random_operation = main.get_random_element(OPERATIONS)
     random_number1 = main.get_random_number(1, 20)
     random_number2 = main.get_random_number(1, 20)
@@ -22,10 +20,11 @@ def get_question__right_answer():
     question_text = str(random_number1) + random_operation
     question_text += str(random_number2)
 
+    # get right answer
     arithmetic_result = float(safe_arithmetic_execution(random_operation,
                                                         random_number1,
                                                         random_number2))
-
+    # return
     result = {'question': question_text,
               'right_answer': arithmetic_result,
               }

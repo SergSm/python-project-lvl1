@@ -4,12 +4,10 @@
 use it as a substitute for a brain_games.py"""
 
 import time
-
 from random import randint, seed, choice
 
 from brain_games.scripts.cli import ask
-from brain_games.engine.games import brain_calc#, \
-    #brain_even, brain_gcd, brain_prime, brain_progression
+
 
 COMMON_INTRO_TEXT = 'Welcome to the Brain Games!'
 
@@ -24,7 +22,7 @@ def start_game(game_name):
     """
 
     print(COMMON_INTRO_TEXT)  # constant intro
-    brain_calc.show_description()  # show the task of the game
+    game_name.show_description()  # show the task of the game
 
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
@@ -91,8 +89,14 @@ def print_cheers_to(username):
 # region answer_check
 
 def answer_is_correct(input_answer, right_answer):
-    filtered_answer = filter_user_input(input_answer)
-    return str(right_answer) == str(filtered_answer)
+    # there 2 type of right answers: float and string
+    if isinstance(right_answer, float):
+        filtered_answer = filter_user_input(input_answer)
+        result = (str(right_answer) == str(filtered_answer))
+    else:
+        result = (str(right_answer) == str(input_answer))
+
+    return result
 
 
 def filter_user_input(user_answer):
