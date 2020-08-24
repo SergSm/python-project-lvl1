@@ -38,7 +38,7 @@ def safe_arithmetic_execution(operation, *numbers):
     accumulator = numbers[0]  # assign to the very first value
 
     for number in numbers[1:]:
-        if main_logic.it_casts_to_int(number):  # check if param casts to integer
+        if main_logic.it_casts_to_int(number):  # check if param casts to int
             accumulator = apply_operation(operation, accumulator, number)
 
     return accumulator

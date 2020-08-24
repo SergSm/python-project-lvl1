@@ -6,7 +6,7 @@ from brain_games.engine import main_logic
 # game numbers range
 MIN_RANDOM = 1
 MAX_RANDOM = 10
-PROGRESSION_LEN = 10
+PROG_LEN = 10  # progression length
 
 
 def get_description():
@@ -20,9 +20,9 @@ def get_question__right_answer():
     start_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
     position_of_missing_element = main_logic.get_random_number(0,
-                                                         PROGRESSION_LEN - 1)
+                                                               PROG_LEN - 1)
 
-    arithm_progression = get_arithmetic_progression(PROGRESSION_LEN,
+    arithm_progression = get_arithmetic_progression(PROG_LEN,
                                                     progression_step,
                                                     start_number)
 
