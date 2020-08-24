@@ -1,38 +1,38 @@
-from brain_games.scripts import brain_games
-from brain_games.engine.common_functions import get_user_input,\
-    get_random_number, print_great_success,\
-    print_fail, print_cheers_to, is_answer_correct
+"""Find the greatest common divisor game."""
+
+from brain_games.engine import main
 
 from math import gcd
 
+# game numbers range
+MIN_RANDOM = 1
+MAX_RANDOM = 20
 
-NUMBER_OF_SUCCESSFUL_TRIES = 3
+
+def show_description():
+    print('Find the greatest common'
+          'divisor of given numbers.')
 
 
-def play_gcd():
-    username = brain_games.main('Find the greatest common'
-                                'divisor of given numbers.')
+def get_question__right_answer():
 
-    successful_loops = 0
-    while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
+    # get question
+    random_number1 = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number2 = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
-        random_number1 = get_random_number(1, 20)
-        random_number2 = get_random_number(1, 20)
+    question_text = str(random_number1) + ' ' + str(random_number2)
 
-        question_text = str(random_number1) + ' ' + str(random_number2)
+    # get right answer
+    right_answer = get_correct_answer(random_number1, random_number2)
 
-        user_answer = get_user_input(question=question_text)
 
-        gcd_result = gcd(random_number1, random_number2)
-        user_is_right = is_answer_correct(gcd_result, user_answer)
+    # return
+    result = {'question': question_text,
+              'right_answer': right_answer,
+              }
 
-        if user_is_right:
-            print_great_success()
-            successful_loops += 1
-        else:
-            print_fail(wrong_answer=user_answer,
-                       correct_answer=gcd_result)
-            break
+    return result
 
-    if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
-        print_cheers_to(username)
+
+def get_correct_answer(random_number1, random_number2):
+    return gcd(random_number1, random_number2)
