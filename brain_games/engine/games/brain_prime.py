@@ -8,9 +8,9 @@ MIN_RANDOM = 1
 MAX_RANDOM = 100
 
 
-def show_description():
-    print('Answer \"yes\" if given number is prime. '
-          'Otherwise answer \"no\".')
+def get_description():
+    return 'Answer \"yes\" if given number is prime. '\
+           'Otherwise answer \"no\".'
 
 
 def get_question__right_answer():

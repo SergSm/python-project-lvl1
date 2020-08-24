@@ -19,7 +19,7 @@ def start_game(game_name):
     """
 
     print(COMMON_INTRO_TEXT)  # constant intro
-    game_name.show_description()  # show the task of the game
+    print(game_name.get_description())  # show the task of the game
 
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings

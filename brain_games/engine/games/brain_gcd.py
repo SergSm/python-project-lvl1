@@ -9,9 +9,9 @@ MIN_RANDOM = 1
 MAX_RANDOM = 20
 
 
-def show_description():
-    print('Find the greatest common'
-          'divisor of given numbers.')
+def get_description():
+    return 'Find the greatest common '\
+           'divisor of given numbers.'
 
 
 def get_question__right_answer():

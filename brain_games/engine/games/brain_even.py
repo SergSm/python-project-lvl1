@@ -8,9 +8,9 @@ MIN_RANDOM = 1
 MAX_RANDOM = 20
 
 
-def show_description():
-    print('Answer \"yes\" if number even'
-          ' otherwise answer \"no\".')
+def get_description():
+    return 'Answer \"yes\" if number even'\
+           ' otherwise answer \"no\".'
 
 
 def get_question__right_answer():

@@ -9,8 +9,8 @@ MAX_RANDOM = 10
 PROGRESSION_LENGTH = 10
 
 
-def show_description():
-    print('What number is missing in the progression?')
+def get_description():
+    return 'What number is missing in the progression?'
 
 
 def get_question__right_answer():
