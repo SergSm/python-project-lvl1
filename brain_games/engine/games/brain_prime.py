@@ -40,16 +40,6 @@ def get_correct_answer(number):
         return 'no'
 
 
-# def is_answer_correct(is_prime_number, user_input):
-#
-#     if is_prime_number and user_input == 'yes':
-#         return True
-#     elif not is_prime_number and user_input == 'no':
-#         return True
-#     else:
-#         return False
-
-
 def is_prime(number):
 
     number_is_divisible = False

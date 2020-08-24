@@ -1,46 +1,47 @@
 """Arithmetics progression game"""
 
-from brain_games.scripts import brain_games
-from brain_games.engine.common_functions import get_user_input,\
-    get_random_number, print_great_success, \
-    print_fail, print_cheers_to, is_answer_correct
-
-NUMBER_OF_SUCCESSFUL_TRIES = 3
+from brain_games.engine import main
 
 
-def play_brain_progression_game():
-    username = brain_games.main('What number is missing in the progression?')
+# game numbers range
+MIN_RANDOM = 1
+MAX_RANDOM = 10
+PROGRESSION_LENGTH = 10
 
-    successful_loops = 0
-    while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        progression_length = 10
-        progression_step = get_random_number(1, 10)
-        start_number = get_random_number(1, 10)
-        position_of_missing_element = get_random_number(0,
-                                                        progression_length - 1)
+def show_description():
+    print('What number is missing in the progression?')
 
-        arithm_progression = get_arithmetic_progression(progression_length,
-                                                        progression_step,
-                                                        start_number)
 
-        missing_element = arithm_progression[position_of_missing_element]
-        question_text = get_question_text(arithm_progression,
-                                          position_of_missing_element)
+def get_question__right_answer():
 
-        user_answer = get_user_input(question=question_text)
-        user_is_right = is_answer_correct(missing_element, user_answer)
+    # get question
+    progression_step = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    start_number = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
-        if user_is_right:
-            print_great_success()
-            successful_loops += 1
-        else:
-            print_fail(wrong_answer=user_answer,
-                       correct_answer=missing_element)
-            break
+    position_of_missing_element = main.get_random_number(0,
+                                                         PROGRESSION_LENGTH - 1)
 
-    if successful_loops >= NUMBER_OF_SUCCESSFUL_TRIES:
-        print_cheers_to(username)
+    arithm_progression = get_arithmetic_progression(PROGRESSION_LENGTH,
+                                                    progression_step,
+                                                    start_number)
+
+    question_text = get_question_text(arithm_progression,
+                                      position_of_missing_element)
+
+    # get right answer
+    right_answer = get_correct_answer(arithm_progression, position_of_missing_element)
+
+    # return
+    result = {'question': question_text,
+              'right_answer': right_answer,
+              }
+
+    return result
+
+
+def get_correct_answer(arithm_progression, position_of_missing_element):
+    return arithm_progression[position_of_missing_element]
 
 
 def get_arithmetic_progression(length, step, start_number):
