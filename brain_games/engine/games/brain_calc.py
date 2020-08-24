@@ -57,7 +57,3 @@ def apply_operation(operation, accumulator, number):
     except ValueError:
         return False
     return accumulator
-
-
-
-

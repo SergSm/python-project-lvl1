@@ -46,9 +46,10 @@ def execute_game_loop(game_name):
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
         question_answer = game_name.get_question__right_answer()
-
-        print("Question: ", question_answer['question'])  # show the session question
-        user_answer = ask('Your answer: ')  # get user answer to the game session
+        # show the session question
+        print("Question: ", question_answer['question'])
+        # get user answer to the game session
+        user_answer = ask('Your answer: ')
 
         # fill in th e context
         game_context = {'wrong_answer': user_answer,
@@ -57,7 +58,8 @@ def execute_game_loop(game_name):
 
         if answer_is_correct(user_answer, question_answer['right_answer']):
             successful_loops += 1
-        else:  # transfer the session specific info to the previous function using context variable
+        else:  # transfer the session specific info
+            # to the previous function using context variable
 
             victory = False  # lose
             break
