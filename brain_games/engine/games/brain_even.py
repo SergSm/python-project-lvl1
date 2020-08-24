@@ -1,6 +1,6 @@
 """Check for parity."""
 
-from brain_games.engine import main
+from brain_games.engine import main_logic
 import brain_games.engine.games.brain_even as game
 
 # game numbers range
@@ -15,7 +15,7 @@ def get_description():
 
 def get_question__right_answer():
 
-    return main.question_answer_wrapper(MIN_RANDOM, MAX_RANDOM, game)
+    return main_logic.question_answer_wrapper(MIN_RANDOM, MAX_RANDOM, game)
 
 
 def get_correct_answer(number):

@@ -1,12 +1,11 @@
 """Check for parity run script"""
 
-
-from brain_games.engine.main import start_game
+from brain_games.engine import main_logic
 from brain_games.engine.games import brain_even
 
 
 def main():
-    start_game(brain_even)
+    main_logic.start_game(brain_even)
 
 
 if __name__ == "__main__":

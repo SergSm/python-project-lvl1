@@ -139,8 +139,11 @@ def it_casts_to_int(s):
 # endregion
 
 
+# region Games common logic wrapper
+
 def question_answer_wrapper(minimum, maximum, game):
-    """for brain_even and brain_prime"""
+    """for brain_even and brain_prime
+    to pass check on codeclimate"""
 
     # get question
     random_number = get_random_number(minimum, maximum)
@@ -155,3 +158,5 @@ def question_answer_wrapper(minimum, maximum, game):
               }
 
     return result
+
+# endregion

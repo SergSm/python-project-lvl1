@@ -1,6 +1,6 @@
 """Arithmetics progression game"""
 
-from brain_games.engine import main
+from brain_games.engine import main_logic
 
 
 # game numbers range
@@ -16,10 +16,10 @@ def get_description():
 def get_question__right_answer():
 
     # get question
-    progression_step = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
-    start_number = main.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    progression_step = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    start_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
-    position_of_missing_element = main.get_random_number(0,
+    position_of_missing_element = main_logic.get_random_number(0,
                                                          PROGRESSION_LEN - 1)
 
     arithm_progression = get_arithmetic_progression(PROGRESSION_LEN,
