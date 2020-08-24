@@ -1,7 +1,4 @@
-# TODO: refactor this module as the main entry point for all the scripts
-
-"""Main module for the game logic flow.
-use it as a substitute for a brain_games.py"""
+"""Main module for the game logic flow."""
 
 import time
 from random import randint, seed, choice
