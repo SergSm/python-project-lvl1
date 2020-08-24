@@ -39,7 +39,7 @@ def start_game(game_name):
 
 def execute_game_loop(game_name):
     """
-    Execute common game logic flow and return the games session result
+    Execute common game logic flow and return the game session's result
     :param game_name: the game logic module
     :return: bool
     """
