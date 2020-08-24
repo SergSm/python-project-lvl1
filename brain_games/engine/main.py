@@ -137,3 +137,21 @@ def it_casts_to_int(s):
         return False
 
 # endregion
+
+
+def question_answer_wrapper(minimum, maximum, game):
+    """for brain_even and brain_prime"""
+
+    # get question
+    random_number = get_random_number(minimum, maximum)
+    question_text = str(random_number)
+
+    # get right answer
+    right_answer = game.get_correct_answer(random_number)
+
+    # return
+    result = {'question': question_text,
+              'right_answer': right_answer,
+              }
+
+    return result
