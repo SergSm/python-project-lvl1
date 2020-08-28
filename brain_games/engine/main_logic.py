@@ -1,7 +1,7 @@
 """Main module for the game logic flow."""
 
 import time
-from random import randint, seed, choice
+from random import randint, seed
 
 from brain_games.cli import ask
 
