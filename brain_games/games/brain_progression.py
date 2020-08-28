@@ -33,9 +33,7 @@ def get_question__right_answer():
                                       position_of_missing_element)
 
     # return
-    result = {'question': question_text,
-              'right_answer': right_answer,
-              }
+    result = (question_text, right_answer)
 
     return result
 

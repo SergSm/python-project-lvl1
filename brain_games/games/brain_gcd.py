@@ -25,9 +25,7 @@ def get_question__right_answer():
     right_answer = get_correct_answer(random_number1, random_number2)
 
     # return
-    result = {'question': question_text,
-              'right_answer': right_answer,
-              }
+    result = (question_text, right_answer)
 
     return result
 

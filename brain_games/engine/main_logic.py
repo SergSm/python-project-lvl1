@@ -49,16 +49,16 @@ def execute_game_loop(game_name):
 
         question_answer = game_name.get_question__right_answer()
         # show the session question
-        print("Question: ", question_answer['question'])
+        print("Question: ", question_answer[0])
         # get user answer to the game session
         user_answer = ask('Your answer: ')
 
         # fill in th e context
         game_context = {'wrong_answer': user_answer,
-                        'correct_answer': question_answer['right_answer'],
+                        'correct_answer': question_answer[1],
                         }
 
-        if answer_is_correct(user_answer, question_answer['right_answer']):
+        if answer_is_correct(user_answer, question_answer[1]):
             successful_loops += 1
         else:  # transfer the session specific info
             # to the previous function using context variable
@@ -94,10 +94,8 @@ def filter_user_input(user_answer):
 # endregion
 
 
-# region math_and_rounding
-
 def get_random_number(int_begin, int_end):
-    """use function both in brain_calc and brain_even games"""
+    """used in all games"""
     seed(time.clock())
     random_number = randint(int_begin, int_end)
 
@@ -110,6 +108,3 @@ def it_casts_to_int(s):
         return True
     except ValueError:
         return False
-
-# endregion
-

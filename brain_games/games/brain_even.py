@@ -21,9 +21,7 @@ def get_question__right_answer():
     right_answer = game.get_correct_answer(random_number)
 
     # return
-    result = {'question': question_text,
-              'right_answer': right_answer,
-              }
+    result = (question_text, right_answer)
 
     return result
 
