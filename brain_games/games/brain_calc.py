@@ -1,7 +1,7 @@
 """Calculator game."""
 
 from brain_games.engine import main_logic
-
+from random import choice
 
 OPERATIONS = ('+', '-', '*', '/')
 
@@ -12,7 +12,7 @@ DESCRIPTION = 'What is the result of the expression?'
 def get_question__right_answer():
 
     # get question
-    random_operation = main_logic.get_random_element(OPERATIONS)
+    random_operation = choice(OPERATIONS)
     random_number1 = main_logic.get_random_number(1, 20)
     random_number2 = main_logic.get_random_number(1, 20)
 
@@ -52,7 +52,7 @@ def apply_operation(operation, accumulator, number):
         elif operation == '*':
             accumulator = accumulator * number
         elif operation == '/':
-            accumulator = main_logic.apply_rounding(accumulator / number)
+            accumulator = round((accumulator / number), 2)
     except ValueError:
         return False
     return accumulator

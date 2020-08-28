@@ -27,11 +27,13 @@ def start_game(game_name):
     victory, game_context = execute_game_loop(game_name)
 
     if victory:
-        print_cheers_to(username)
+        print('Congratulations, ', username, '!')
     else:
-        print_fail(wrong_answer=game_context['wrong_answer'],
-                   correct_answer=game_context['correct_answer'],
-                   username=username)
+        print(' \'', game_context['wrong_answer'],
+              '\' is wrong answer ;(. '
+              'Correct answer was \'', game_context['correct_answer'],
+              '\'')
+        print('Let\'s try again, ', username, '!')
 
 
 def execute_game_loop(game_name):
@@ -67,20 +69,6 @@ def execute_game_loop(game_name):
     return victory, game_context
 
 
-# region game_events_prints
-
-def print_fail(wrong_answer, correct_answer, username):
-    print(' \'', wrong_answer, '\' is wrong answer ;(. '
-                               'Correct answer was \'', correct_answer, '\'')
-    print('Let\'s try again, ', username, '!')
-
-
-def print_cheers_to(username):
-    print('Congratulations, ', username, '!')
-
-# endregion
-
-
 # region answer_check
 
 def answer_is_correct(input_answer, right_answer):
@@ -97,7 +85,7 @@ def answer_is_correct(input_answer, right_answer):
 def filter_user_input(user_answer):
     try:
         user_answer = float(user_answer)
-        user_answer = apply_rounding(user_answer)
+        user_answer = round(user_answer, 2)
     except ValueError:
         raise Exception('The input should be a number')
 
@@ -108,21 +96,12 @@ def filter_user_input(user_answer):
 
 # region math_and_rounding
 
-def apply_rounding(number):
-    """common float number rounding function """
-    return round(number, 2)
-
-
 def get_random_number(int_begin, int_end):
     """use function both in brain_calc and brain_even games"""
     seed(time.clock())
     random_number = randint(int_begin, int_end)
 
     return random_number
-
-
-def get_random_element(the_list):
-    return choice(the_list)
 
 
 def it_casts_to_int(s):
