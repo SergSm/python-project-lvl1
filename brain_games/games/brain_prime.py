@@ -40,8 +40,6 @@ def get_correct_answer(number):
 
 def is_prime(number):
 
-    number_is_divisible = False
-
     if number != 1:     # prime number is always greater than 1
         number_is_divisible = not is_divisible(number)
     else:
