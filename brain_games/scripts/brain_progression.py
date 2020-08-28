@@ -1,7 +1,7 @@
 """Arithmetics progression game"""
 
 from brain_games.engine import main_logic
-from brain_games.engine.games import brain_progression
+from brain_games.games import brain_progression
 
 
 def main():

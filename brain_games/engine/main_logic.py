@@ -3,7 +3,7 @@
 import time
 from random import randint, seed, choice
 
-from brain_games.scripts.cli import ask
+from brain_games.cli import ask
 
 
 COMMON_INTRO_TEXT = 'Welcome to the Brain Games!'
@@ -19,7 +19,7 @@ def start_game(game_name):
     """
 
     print(COMMON_INTRO_TEXT)  # constant intro
-    print(game_name.get_description())  # show the task of the game
+    print(game_name.DESCRIPTION)  # show the task of the game
 
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
@@ -138,25 +138,3 @@ def it_casts_to_int(s):
 
 # endregion
 
-
-# region Games common logic wrapper
-
-def question_answer_wrapper(minimum, maximum, game):
-    """for brain_even and brain_prime
-    to pass check on codeclimate"""
-
-    # get question
-    random_number = get_random_number(minimum, maximum)
-    question_text = str(random_number)
-
-    # get right answer
-    right_answer = game.get_correct_answer(random_number)
-
-    # return
-    result = {'question': question_text,
-              'right_answer': right_answer,
-              }
-
-    return result
-
-# endregion

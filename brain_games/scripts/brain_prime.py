@@ -1,7 +1,7 @@
 """Prime number game run script"""
 
 from brain_games.engine import main_logic
-from brain_games.engine.games import brain_prime
+from brain_games.games import brain_prime
 
 
 def main():

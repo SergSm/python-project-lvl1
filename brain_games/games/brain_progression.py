@@ -9,8 +9,7 @@ MAX_RANDOM = 10
 PROG_LEN = 10  # progression length
 
 
-def get_description():
-    return 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
 
 
 def get_question__right_answer():
@@ -70,5 +69,6 @@ def get_question_text(list_of_values, exclude_element):
             text += '..' + ' '
         else:
             text += str(list_of_values[x]) + ' '
+    text = text.rstrip()
 
     return text

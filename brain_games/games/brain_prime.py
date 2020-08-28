@@ -1,7 +1,7 @@
 """Prime number game"""
 
 from brain_games.engine import main_logic
-import brain_games.engine.games.brain_prime as game
+import brain_games.games.brain_prime as game
 
 
 # game numbers range
@@ -9,14 +9,25 @@ MIN_RANDOM = 1
 MAX_RANDOM = 100
 
 
-def get_description():
-    return 'Answer \"yes\" if given number is prime. '\
-           'Otherwise answer \"no\".'
+DESCRIPTION = 'Answer \"yes\" if given number is prime. '\
+              'Otherwise answer \"no\".'
 
 
 def get_question__right_answer():
 
-    return main_logic.question_answer_wrapper(MIN_RANDOM, MAX_RANDOM, game)
+    # get question
+    random_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    question_text = str(random_number)
+
+    # get right answer
+    right_answer = game.get_correct_answer(random_number)
+
+    # return
+    result = {'question': question_text,
+              'right_answer': right_answer,
+              }
+
+    return result
 
 
 def get_correct_answer(number):

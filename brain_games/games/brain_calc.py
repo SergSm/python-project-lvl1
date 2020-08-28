@@ -6,8 +6,7 @@ from brain_games.engine import main_logic
 OPERATIONS = ('+', '-', '*', '/')
 
 
-def get_description():
-    return 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 
 
 def get_question__right_answer():
