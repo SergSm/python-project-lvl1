@@ -69,10 +69,6 @@ def execute_game_loop(game_name):
 
 # region game_events_prints
 
-def print_great_success():
-    print('Correct!')
-
-
 def print_fail(wrong_answer, correct_answer, username):
     print(' \'', wrong_answer, '\' is wrong answer ;(. '
                                'Correct answer was \'', correct_answer, '\'')
