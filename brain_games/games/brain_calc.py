@@ -41,16 +41,16 @@ def safe_arithmetic_execution(operation, *numbers):
     return accumulator
 
 
-def apply_operation(operation, accumulator, number):
+def apply_operation(operation, number1, number2):
     try:
         if operation == '+':
-            accumulator = accumulator + number
+            number1 = number1 + number2
         elif operation == '-':
-            accumulator = accumulator - number
+            number1 = number1 - number2
         elif operation == '*':
-            accumulator = accumulator * number
+            number1 = number1 * number2
         elif operation == '/':
-            accumulator = round((accumulator / number), 2)
+            number1 = round((number1 / number2), 2)
     except ValueError:
         return False
-    return accumulator
+    return number1
