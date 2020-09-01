@@ -36,12 +36,12 @@ def safe_arithmetic_execution(operation, *numbers):
 
     for number in numbers[1:]:
         if main_logic.it_casts_to_int(number):  # check if param casts to int
-            accumulator = apply_operation(operation, accumulator, number)
+            accumulator = calculate(operation, accumulator, number)
 
     return accumulator
 
 
-def apply_operation(operation, number1, number2):
+def calculate(operation, number1, number2):
     try:
         if operation == '+':
             number1 = number1 + number2
