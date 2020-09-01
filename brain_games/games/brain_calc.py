@@ -3,7 +3,7 @@
 from brain_games.engine import main_logic
 from random import choice
 
-OPERATIONS = ('+', '-', '*', '/')
+OPERATIONS = ['+', '-', '*', '/']
 
 
 DESCRIPTION = 'What is the result of the expression?'
