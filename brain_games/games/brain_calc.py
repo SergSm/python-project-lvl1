@@ -29,6 +29,7 @@ def get_question__right_answer():
     return result
 
 
+# TODO: provide more detailed information about purpose of this function
 def safe_arithmetic_execution(operation, *numbers):
     """applies operation to numbers*"""
 
