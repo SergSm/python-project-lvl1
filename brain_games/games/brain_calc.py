@@ -9,7 +9,7 @@ OPERATIONS = ['+', '-', '*', '/']
 DESCRIPTION = 'What is the result of the expression?'
 
 
-def get_question__right_answer():
+def get_question_and_right_answer():
 
     # get question
     random_operation = choice(OPERATIONS)

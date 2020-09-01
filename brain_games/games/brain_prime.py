@@ -13,7 +13,7 @@ DESCRIPTION = 'Answer \"yes\" if given number is prime. '\
               'Otherwise answer \"no\".'
 
 
-def get_question__right_answer():
+def get_question_and_right_answer():
 
     # get question
     random_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)

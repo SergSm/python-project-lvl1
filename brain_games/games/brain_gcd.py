@@ -13,7 +13,7 @@ DESCRIPTION = 'Find the greatest common '\
               'divisor of given numbers.'
 
 
-def get_question__right_answer():
+def get_question_and_right_answer():
 
     # get question
     random_number1 = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)

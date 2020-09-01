@@ -12,7 +12,7 @@ PROG_LEN = 10  # progression length
 DESCRIPTION = 'What number is missing in the progression?'
 
 
-def get_question__right_answer():
+def get_question_and_right_answer():
 
     # get question
     progression_step = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)

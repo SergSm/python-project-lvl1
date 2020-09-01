@@ -47,7 +47,7 @@ def execute_game_loop(game_name):
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        question_answer = game_name.get_question__right_answer()
+        question_answer = game_name.get_question_and_right_answer()
         # show the session question
         print("Question: ", question_answer[0])
         # get user answer to the game session
