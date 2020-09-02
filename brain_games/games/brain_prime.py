@@ -9,8 +9,8 @@ MIN_RANDOM = 1
 MAX_RANDOM = 100
 
 
-DESCRIPTION = 'Answer \"yes\" if given number is prime. '\
-              'Otherwise answer \"no\".'
+DESCRIPTION = 'Answer "yes" if given number is prime. '\
+              'Otherwise answer "no".'
 
 
 def get_question_and_right_answer():
