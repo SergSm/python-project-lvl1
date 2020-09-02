@@ -44,19 +44,19 @@ def get_correct_answer(arithm_progression, position_of_missing_element):
 
 def get_arithmetic_progression(length, step, start_number):
 
-    result_list = []
+    progression = []
 
     # the simplest case with the only one number
     if length == 1:
-        result_list.append(start_number)
-        return result_list
+        progression.append(start_number)
+        return progression
 
     current_number = start_number
     for x in range(1, length+1):
         current_number += step
-        result_list.append(current_number)
+        progression.append(current_number)
 
-    return result_list
+    return progression
 
 
 def get_question_text(list_of_values, exclude_element):
