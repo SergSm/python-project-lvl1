@@ -17,7 +17,7 @@ def get_question_and_right_answer():
     question = str(random_number)
 
     # get right answer
-    if is_even(random_number):
+    if (random_number % 2) == 0: # is_even?
         right_answer = 'yes'
     else:
         right_answer = 'no'
@@ -26,9 +26,3 @@ def get_question_and_right_answer():
     result = (question, right_answer)
 
     return result
-
-def is_even(number):
-    if (number % 2) == 0:
-        return True  # Even
-    else:
-        return False  # Odd
