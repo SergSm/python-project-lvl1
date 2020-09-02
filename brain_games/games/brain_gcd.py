@@ -22,13 +22,9 @@ def get_question_and_right_answer():
     question = f'{random_number1} {random_number2}'
 
     # get right answer
-    right_answer = get_correct_answer(random_number1, random_number2)
+    right_answer = gcd(random_number1, random_number2)
 
     # return
     result = (question, right_answer)
 
     return result
-
-
-def get_correct_answer(random_number1, random_number2):
-    return gcd(random_number1, random_number2)
