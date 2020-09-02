@@ -1,6 +1,6 @@
 """Check for parity."""
 
-from brain_games.engine import main_logic
+from brain_games.engine import shared_logic
 
 # game numbers range
 MIN_RANDOM = 1
@@ -13,11 +13,11 @@ DESCRIPTION = 'Answer "yes" if number even'\
 
 def get_question_and_right_answer():
     # get question
-    random_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     question = str(random_number)
 
     # get right answer
-    if (random_number % 2) == 0: # is_even?
+    if (random_number % 2) == 0:  # is_even?
         right_answer = 'yes'
     else:
         right_answer = 'no'

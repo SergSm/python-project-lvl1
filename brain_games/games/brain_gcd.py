@@ -1,6 +1,6 @@
 """Find the greatest common divisor game."""
 
-from brain_games.engine import main_logic
+from brain_games.engine import shared_logic
 
 from math import gcd
 
@@ -16,8 +16,8 @@ DESCRIPTION = 'Find the greatest common '\
 def get_question_and_right_answer():
 
     # get question
-    random_number1 = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
-    random_number2 = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number1 = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number2 = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
     question = f'{random_number1} {random_number2}'
 

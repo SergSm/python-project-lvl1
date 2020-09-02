@@ -1,7 +1,7 @@
 """Calculator game."""
 
-from brain_games.engine import main_logic
 from random import choice
+from brain_games.engine import shared_logic
 
 OPERATIONS = ['+', '-', '*', '/']
 
@@ -13,8 +13,8 @@ def get_question_and_right_answer():
 
     # get question
     random_operation = choice(OPERATIONS)
-    random_number1 = main_logic.get_random_number(1, 20)
-    random_number2 = main_logic.get_random_number(1, 20)
+    random_number1 = shared_logic.get_random_number(1, 20)
+    random_number2 = shared_logic.get_random_number(1, 20)
 
     question = f'{random_number1} {random_operation} {random_number2}'
 
@@ -35,7 +35,7 @@ def safe_arithmetic_execution(operation, *numbers):
     accumulator = numbers[0]  # assign to the very first value
 
     for number in numbers[1:]:
-        if main_logic.it_casts_to_int(number):  # check if param casts to int
+        if shared_logic.it_casts_to_int(number):  # check if param casts to int
             accumulator = calculate(operation, accumulator, number)
 
     return accumulator

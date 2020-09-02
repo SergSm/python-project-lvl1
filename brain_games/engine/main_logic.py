@@ -1,7 +1,5 @@
 """Main module for the game logic flow."""
 
-import time
-from random import randint, seed
 
 from brain_games.cli import ask
 
@@ -53,58 +51,25 @@ def execute_game_loop(game_name):
         # get user answer to the game session
         user_answer = ask('Your answer: ')
 
-        # fill in th e context
+        # fill in the context
         game_context = {'wrong_answer': user_answer,
                         'correct_answer': question_answer[1],
                         }
 
-        if answer_is_correct(user_answer, question_answer[1]):
+        # compare user answer and right answer
+        if isinstance(question_answer[1], float):
+            try:
+                user_answer = round(float(user_answer), 2)
+            except ValueError:
+                raise Exception('The input should be a number')
+
+        game_session_victory = (str(question_answer[1]) == str(user_answer))
+
+        if game_session_victory:
             successful_loops += 1
         else:  # transfer the session specific info
             # to the previous function using context variable
-
             victory = False  # lose
             break
 
     return victory, game_context
-
-
-# region answer_check
-
-def answer_is_correct(input_answer, right_answer):
-    # there 2 type of right answers: float and string
-    if isinstance(right_answer, float):
-        filtered_answer = filter_user_input(input_answer)
-        result = (str(right_answer) == str(filtered_answer))
-    else:
-        result = (str(right_answer) == str(input_answer))
-
-    return result
-
-
-def filter_user_input(user_answer):
-    try:
-        user_answer = float(user_answer)
-        user_answer = round(user_answer, 2)
-    except ValueError:
-        raise Exception('The input should be a number')
-
-    return user_answer
-
-# endregion
-
-
-def get_random_number(int_begin, int_end):
-    """used in all games"""
-    seed(time.clock())
-    random_number = randint(int_begin, int_end)
-
-    return random_number
-
-
-def it_casts_to_int(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False

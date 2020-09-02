@@ -1,6 +1,6 @@
 """Prime number game"""
 
-from brain_games.engine import main_logic
+from brain_games.engine import shared_logic
 import brain_games.games.brain_prime as game
 
 
@@ -16,7 +16,7 @@ DESCRIPTION = 'Answer "yes" if given number is prime. '\
 def get_question_and_right_answer():
 
     # get question
-    random_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     question = str(random_number)
 
     # get right answer
