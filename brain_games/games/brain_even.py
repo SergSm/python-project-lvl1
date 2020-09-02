@@ -15,13 +15,13 @@ DESCRIPTION = 'Answer \"yes\" if number even'\
 def get_question_and_right_answer():
     # get question
     random_number = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
-    question_text = str(random_number)
+    question = str(random_number)
 
     # get right answer
     right_answer = game.get_correct_answer(random_number)
 
     # return
-    result = (question_text, right_answer)
+    result = (question, right_answer)
 
     return result
 

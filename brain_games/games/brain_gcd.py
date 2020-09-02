@@ -19,13 +19,13 @@ def get_question_and_right_answer():
     random_number1 = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     random_number2 = main_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
-    question_text = str(random_number1) + ' ' + str(random_number2)
+    question = f'{random_number1} {random_number2}'
 
     # get right answer
     right_answer = get_correct_answer(random_number1, random_number2)
 
     # return
-    result = (question_text, right_answer)
+    result = (question, right_answer)
 
     return result
 

@@ -25,7 +25,7 @@ def get_question_and_right_answer():
                                                     progression_step,
                                                     start_number)
 
-    question_text = get_question_text(arithm_progression,
+    question = get_question_text(arithm_progression,
                                       position_of_missing_element)
 
     # get right answer
@@ -33,7 +33,7 @@ def get_question_and_right_answer():
                                       position_of_missing_element)
 
     # return
-    result = (question_text, right_answer)
+    result = (question, right_answer)
 
     return result
 
