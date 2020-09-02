@@ -16,15 +16,14 @@ def get_question_and_right_answer():
     random_number1 = main_logic.get_random_number(1, 20)
     random_number2 = main_logic.get_random_number(1, 20)
 
-    question_text = str(random_number1) + random_operation
-    question_text += str(random_number2)
+    question = f'{random_number1} {random_operation} {random_number2}'
 
     # get right answer
     arithmetic_result = float(safe_arithmetic_execution(random_operation,
                                                         random_number1,
                                                         random_number2))
     # return
-    result = (question_text, arithmetic_result)
+    result = (question, arithmetic_result)
 
     return result
 
