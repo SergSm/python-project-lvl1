@@ -47,17 +47,16 @@ def start_game(game_name):
 
         if game_session_victory:
             successful_loops += 1
-        else:  # transfer the session specific info
-            # to the previous function using context variable
-            victory = False  # lose
+        else:
             break
 
-    if victory:
-        print('Congratulations, ', username, '!')
-    else:
+    if successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # lose situation
         print(' \'', game_context['wrong_answer'],
               '\' is wrong answer ;(. '
               'Correct answer was \'', game_context['correct_answer'],
               '\'')
         print('Let\'s try again, ', username, '!')
+    else:  # win
+        print('Congratulations, ', username, '!')
+
 
