@@ -30,12 +30,9 @@ def get_question_and_right_answer():
 
 def get_correct_answer(number):
 
-    is_prime_number = is_prime(number)
+    is_prime_number = "yes" if is_prime(number) else "no"
 
-    if is_prime_number:
-        return 'yes'
-    else:
-        return 'no'
+    return is_prime_number
 
 
 def is_prime(number):
