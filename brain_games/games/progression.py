@@ -5,7 +5,7 @@ from brain_games import shared_logic
 # game numbers range
 MIN_RANDOM = 1
 MAX_RANDOM = 10
-PROG_LEN = 10  # progression length
+PROGRESSION_LENGTH = 10  # progression length
 
 
 DESCRIPTION = 'What number is missing in the progression?'
@@ -17,10 +17,10 @@ def get_question_and_right_answer():
     progression_step = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     start_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
-    position_of_missing_element = shared_logic.get_random_number(0,
-                                                                 PROG_LEN - 1)
+    position_of_missing_element = shared_logic.\
+        get_random_number(0, PROGRESSION_LENGTH - 1)
 
-    arithm_progression = get_arithmetic_progression(PROG_LEN,
+    arithm_progression = get_arithmetic_progression(PROGRESSION_LENGTH,
                                                     progression_step,
                                                     start_number)
 
