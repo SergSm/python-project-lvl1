@@ -43,15 +43,18 @@ def safe_arithmetic_execution(operation, *numbers):
 
 
 def calculate(operation, number1, number2):
+
+    result = number1  # why not number1 ? :-)
+
     try:
         if operation == '+':
-            number1 = number1 + number2
+            result = number1 + number2
         elif operation == '-':
-            number1 = number1 - number2
+            result = number1 - number2
         elif operation == '*':
-            number1 = number1 * number2
+            result = number1 * number2
         elif operation == '/':
-            number1 = round((number1 / number2), 2)
+            result = round((number1 / number2), 2)
     except ValueError:
         return False
-    return number1
+    return result
