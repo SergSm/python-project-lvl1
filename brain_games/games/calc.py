@@ -19,11 +19,13 @@ def get_question_and_right_answer():
     question = f'{random_number1} {random_operation} {random_number2}'
 
     # get right answer
-    arithmetic_result = float(safe_arithmetic_execution(random_operation,
+    arithmetic_execution_result = float(safe_arithmetic_execution(random_operation,
                                                         random_number1,
                                                         random_number2))
     # return
-    result = (question, arithmetic_result)
+    # Attention! The result contains not only the right answer but also
+    # the question so the engine function can render it
+    result = (question, arithmetic_execution_result)
 
     return result
 
