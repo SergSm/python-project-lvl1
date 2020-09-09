@@ -20,7 +20,7 @@ def get_question_and_right_answer():
     question = str(random_number)
 
     # get right answer
-    right_answer = "yes" if game.get_correct_answer(random_number) else "no"
+    right_answer = "yes" if is_prime(random_number) else "no"
 
     # return
     result = (question, right_answer)
@@ -30,10 +30,11 @@ def get_question_and_right_answer():
 
 def is_prime(number):
 
-    if number != 1:     # prime number is always greater than 1
-        number_is_divisible = not is_divisible(number)
+    if number <= 1:  # prime number is always greater than 1
+        # 0 and negative numbers are not prime numbers
+        number_is_divisible = False
     else:
-        number_is_divisible = False  # 1 is a special case
+        number_is_divisible = not is_divisible(number)
 
     return number_is_divisible
 
