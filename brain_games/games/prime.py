@@ -20,19 +20,12 @@ def get_question_and_right_answer():
     question = str(random_number)
 
     # get right answer
-    right_answer = game.get_correct_answer(random_number)
+    right_answer = "yes" if game.get_correct_answer(random_number) else "no"
 
     # return
     result = (question, right_answer)
 
     return result
-
-
-def get_correct_answer(number):
-
-    is_prime_number = "yes" if is_prime(number) else "no"
-
-    return is_prime_number
 
 
 def is_prime(number):
