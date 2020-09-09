@@ -41,9 +41,8 @@ def is_prime(number):
 
 def is_divisible(number):
 
-    divisibiliy_trigger = False
     for i in range(2, number):
         if (number % i) == 0:
-            divisibiliy_trigger = True
+            return True
 
-    return divisibiliy_trigger
+    return False
