@@ -22,26 +22,6 @@ def start_game(game_name):
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
 
-    victory, game_context = execute_game_loop(game_name)
-
-    if victory:
-        print('Congratulations, ', username, '!')
-    else:
-        print(' \'', game_context['wrong_answer'],
-              '\' is wrong answer ;(. '
-              'Correct answer was \'', game_context['correct_answer'],
-              '\'')
-        print('Let\'s try again, ', username, '!')
-
-
-def execute_game_loop(game_name):
-    """
-    Execute common game logic flow and return the game session's result
-    :param game_name: the game logic module
-    :return: bool
-    """
-
-    victory = True
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
@@ -72,4 +52,12 @@ def execute_game_loop(game_name):
             victory = False  # lose
             break
 
-    return victory, game_context
+    if victory:
+        print('Congratulations, ', username, '!')
+    else:
+        print(' \'', game_context['wrong_answer'],
+              '\' is wrong answer ;(. '
+              'Correct answer was \'', game_context['correct_answer'],
+              '\'')
+        print('Let\'s try again, ', username, '!')
+
