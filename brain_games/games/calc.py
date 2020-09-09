@@ -1,7 +1,7 @@
 """Calculator game."""
 
 from random import choice
-from brain_games.engine import shared_logic
+from brain_games import shared_logic
 
 OPERATIONS = ['+', '-', '*', '/']
 

@@ -1,6 +1,6 @@
 """Find the greatest common divisor game."""
 
-from brain_games.engine import shared_logic
+from brain_games import shared_logic
 
 from math import gcd
 

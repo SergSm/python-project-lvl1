@@ -1,6 +1,6 @@
 """Check for parity."""
 
-from brain_games.engine import shared_logic
+from brain_games import shared_logic
 
 # game numbers range
 MIN_RANDOM = 1

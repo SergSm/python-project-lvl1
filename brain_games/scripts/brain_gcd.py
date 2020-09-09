@@ -1,11 +1,11 @@
 """brain gcd games run script"""
 
 from brain_games.engine import main_logic
-from brain_games.games import brain_gcd
+from brain_games.games import gcd
 
 
 def main():
-    main_logic.start_game(brain_gcd)
+    main_logic.start_game(gcd)
 
 
 if __name__ == "__main__":

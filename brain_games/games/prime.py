@@ -1,7 +1,7 @@
 """Prime number game"""
 
-from brain_games.engine import shared_logic
-import brain_games.games.brain_prime as game
+from brain_games import shared_logic
+import brain_games.games.prime as game
 
 
 # game numbers range
