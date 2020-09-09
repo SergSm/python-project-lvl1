@@ -2,10 +2,42 @@
 
 "# python-project-lvl1" 
 
-*Installation*
+# Description
+
+The Hexlet python developer project
+
+The purpose of this project is to learn how to create python production ready code from scratch
+
+The project consists of several game logic modules in ```brain_games/games``` folder </p>
+Games run by scripts from ```brain_games/scripts``` folder </p>
+The main game loop is executed by start_game() function from ```brain_games/engine/main_logic.py``` module
+<p>
+
+The entry points of this project are specified in the pyproject.toml file
+in the section [tool.poetry.scripts]
+
+# Installation
+
+```
+pip install --index-url https://test.pypi.org/simple/  --extra-index-url https://pypi.org/simple SergSm_brain_game
+```
+
+## Installation ASCIInema
 
 [![asciicast](https://asciinema.org/a/yu7UB0AoATS93ELqHWuPuiddV.svg)](https://asciinema.org/a/yu7UB0AoATS93ELqHWuPuiddV)
 
+
+# How to run project
+
+Any game may be run by using following respective commands:
+
+```
+brain-even
+brain-calc 
+brain-gcd
+brain-progression 
+brain-prime
+```
 
 
 # "Parity check" game

@@ -58,5 +58,3 @@ def start_game(game_name):
         print('Let\'s try again, ', username, '!')
     else:  # win
         print('Congratulations, ', username, '!')
-
-
