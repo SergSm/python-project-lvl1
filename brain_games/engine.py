@@ -9,15 +9,15 @@ COMMON_INTRO_TEXT = 'Welcome to the Brain Games!'
 NUMBER_OF_SUCCESSFUL_TRIES = 3  # wins number condition
 
 
-def play(game_name):
+def play(game):
     """
     Greet the user and start the main loop
-    :param game_name: the game logic module
+    :param game: the game logic module
     :return:
     """
 
     print(COMMON_INTRO_TEXT)  # constant intro
-    print(game_name.DESCRIPTION)  # show the task of the game
+    print(game.DESCRIPTION)  # show the task of the game
 
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
@@ -25,7 +25,7 @@ def play(game_name):
     successful_loops = 0
     while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        question_answer = game_name.get_question_and_right_answer()
+        question_answer = game.get_question_and_right_answer()
         # show the session question
         print("Question: ", question_answer[0])
         # get user answer to the game session
