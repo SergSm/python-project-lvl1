@@ -31,6 +31,9 @@ def get_question_and_right_answer():
     return result
 
 
+
+
+
 def safe_arithmetic_execution(operation, *numbers):
     """applies operation to numbers*"""
 

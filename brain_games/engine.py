@@ -1,5 +1,6 @@
 """Main module for the game logic flow."""
 
+from . import shared_logic
 
 from brain_games.cli import ask
 
@@ -38,18 +39,18 @@ def play(game):
             except ValueError:
                 raise Exception('The input should be a number')
 
-        game_session_victory = (str(right_answer) == str(user_answer))
+        game_session_victory = shared_logic.is_win(right_answer, user_answer)
 
         if game_session_victory:
             win_counter += 1
-        else:
+        else:  # lose situation
+            print(' \'', user_answer,
+                  '\' is wrong answer ;(. '
+                  'Correct answer was \'', right_answer,
+                  '\'')
+            print('Let\'s try again, ', username, '!')
             break
 
-    if win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # lose situation
-        print(' \'', user_answer,
-              '\' is wrong answer ;(. '
-              'Correct answer was \'', right_answer,
-              '\'')
-        print('Let\'s try again, ', username, '!')
-    else:  # win
+    if win_counter >= NUMBER_OF_SUCCESSFUL_TRIES:
+        # win situation
         print('Congratulations, ', username, '!')

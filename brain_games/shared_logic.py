@@ -19,3 +19,7 @@ def it_casts_to_int(s):
         return True
     except ValueError:
         return False
+
+
+def is_win(right_answer, user_answer):
+    return str(right_answer) == str(user_answer)
