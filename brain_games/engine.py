@@ -9,7 +9,7 @@ COMMON_INTRO_TEXT = 'Welcome to the Brain Games!'
 NUMBER_OF_SUCCESSFUL_TRIES = 3  # wins number condition
 
 
-def start_game(game_name):
+def play(game_name):
     """
     Greet the user and start the main loop
     :param game_name: the game logic module
