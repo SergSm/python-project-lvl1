@@ -41,7 +41,7 @@ def is_prime(number):
 def is_divisible(number):
 
     # the destination range won't have delimeter greated than number / 2
-    for i in range(2, int(number/2)):
+    for i in range(2, int(number/2)+1):
         if (number % i) == 0:
             return True
 
