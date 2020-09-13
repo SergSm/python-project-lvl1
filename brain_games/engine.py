@@ -22,8 +22,8 @@ def play(game):
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
 
-    successful_loops = 0
-    while successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
+    win_counter = 0  # counts  
+    while win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
         question_answer = game.get_question_and_right_answer()
         # show the session question
@@ -46,11 +46,11 @@ def play(game):
         game_session_victory = (str(question_answer[1]) == str(user_answer))
 
         if game_session_victory:
-            successful_loops += 1
+            win_counter += 1
         else:
             break
 
-    if successful_loops < NUMBER_OF_SUCCESSFUL_TRIES:  # lose situation
+    if win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # lose situation
         print(' \'', game_context['wrong_answer'],
               '\' is wrong answer ;(. '
               'Correct answer was \'', game_context['correct_answer'],
