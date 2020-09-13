@@ -25,25 +25,20 @@ def play(game):
     win_counter = 0  # counts  
     while win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
-        question_answer = game.get_question_and_right_answer()
+        question, right_answer = game.get_question_and_right_answer()
         # show the session question
-        print("Question: ", question_answer[0])
+        print("Question: ", question)
         # get user answer to the game session
         user_answer = ask('Your answer: ')
 
-        # fill in the context
-        game_context = {'wrong_answer': user_answer,
-                        'correct_answer': question_answer[1],
-                        }
-
         # compare user answer and right answer
-        if isinstance(question_answer[1], float):
+        if isinstance(right_answer, float):
             try:
                 user_answer = round(float(user_answer), 2)
             except ValueError:
                 raise Exception('The input should be a number')
 
-        game_session_victory = (str(question_answer[1]) == str(user_answer))
+        game_session_victory = (str(right_answer) == str(user_answer))
 
         if game_session_victory:
             win_counter += 1
@@ -51,9 +46,9 @@ def play(game):
             break
 
     if win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # lose situation
-        print(' \'', game_context['wrong_answer'],
+        print(' \'', user_answer,
               '\' is wrong answer ;(. '
-              'Correct answer was \'', game_context['correct_answer'],
+              'Correct answer was \'', right_answer,
               '\'')
         print('Let\'s try again, ', username, '!')
     else:  # win
