@@ -23,7 +23,7 @@ def play(game):
     username = ask("May I have your name? ")
     print('Hello,', username)  # greetings
 
-    win_counter = 0  # counts  
+    win_counter = 0  # counts
     while win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
         question, right_answer = game.get_question_and_right_answer()
