@@ -45,8 +45,6 @@ def safe_arithmetic_execution(operation, *numbers):
 
 def calculate(operation, number1, number2):
 
-    result = number1  # why not number1 ? :-)
-
     try:
         if operation == '+':
             result = number1 + number2
@@ -56,6 +54,10 @@ def calculate(operation, number1, number2):
             result = number1 * number2
         elif operation == '/':
             result = round((number1 / number2), 2)
+        else:
+            print(f'unknown operation {operation}')
+            return False
     except ValueError:
         return False
+
     return result
