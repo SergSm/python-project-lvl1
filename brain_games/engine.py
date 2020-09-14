@@ -32,13 +32,6 @@ def play(game):
         # get user answer to the game session
         user_answer = ask('Your answer: ')
 
-        # compare user answer and right answer
-        if isinstance(right_answer, float):
-            try:
-                user_answer = round(float(user_answer), 2)
-            except ValueError:
-                raise Exception('The input should be a number')
-
         game_session_victory = shared_logic.is_win(right_answer, user_answer)
 
         if game_session_victory:
