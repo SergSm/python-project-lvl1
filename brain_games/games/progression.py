@@ -24,8 +24,8 @@ def get_question_and_right_answer():
                                                     progression_step,
                                                     start_number)
 
-    question = get_question_text(arithm_progression,
-                                 position_of_missing_element)
+    question = get_question(arithm_progression,
+                            position_of_missing_element)
 
     # get right answer
     right_answer = get_correct_answer(arithm_progression,
@@ -58,14 +58,14 @@ def get_arithmetic_progression(length, step, start_number):
     return progression
 
 
-def get_question_text(list_of_values, exclude_element):
+def get_question(progression, exclude_element_index):
 
-    text = ""
-    for x in range(0, len(list_of_values)-1):
-        if x == exclude_element:
-            text += '..' + ' '
+    question = ""
+    for x in range(0, len(progression) - 1):
+        if x == exclude_element_index:
+            question += '..' + ' '
         else:
-            text += str(list_of_values[x]) + ' '
-    text = text.rstrip()
+            question += str(progression[x]) + ' '
+    question = question.rstrip()
 
-    return text
+    return question

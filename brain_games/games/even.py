@@ -7,8 +7,7 @@ MIN_RANDOM = 1
 MAX_RANDOM = 20
 
 
-DESCRIPTION = 'Answer "yes" if number even'\
-               ' otherwise answer "no".'
+DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
 
 
 def get_question_and_right_answer():
@@ -17,10 +16,7 @@ def get_question_and_right_answer():
     question = str(random_number)
 
     # get right answer
-    if (random_number % 2) == 0:  # is_even?
-        right_answer = 'yes'
-    else:
-        right_answer = 'no'
+    right_answer = 'yes' if random_number % 2 == 0 else 'no'
 
     # return
     result = (question, right_answer)
