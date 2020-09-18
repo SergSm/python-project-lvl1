@@ -27,14 +27,11 @@ def play(game):
     while win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop
 
         question, right_answer = game.get_question_and_right_answer()
-        # show the session question
         print("Question: ", question)
-        # get user answer to the game session
+
         user_answer = ask('Your answer: ')
 
-        game_session_victory = shared_logic.is_win(right_answer, user_answer)
-
-        if game_session_victory:
+        if right_answer == user_answer:
             win_counter += 1
         else:  # lose situation
             print(' \'', user_answer,
@@ -44,6 +41,5 @@ def play(game):
             print('Let\'s try again, ', username, '!')
             break
 
-    if win_counter >= NUMBER_OF_SUCCESSFUL_TRIES:
-        # win situation
+    if win_counter >= NUMBER_OF_SUCCESSFUL_TRIES:  # win situation
         print('Congratulations, ', username, '!')

@@ -25,6 +25,6 @@ def get_question_and_right_answer():
     right_answer = gcd(random_number1, random_number2)
 
     # return
-    result = (question, right_answer)
+    result = (question, str(right_answer))
 
     return result

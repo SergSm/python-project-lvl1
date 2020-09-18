@@ -20,13 +20,13 @@ def get_question_and_right_answer():
 
     # get right answer
     arithmetic_execution_result = \
-        float(safe_arithmetic_execution(random_operation,
-                                        random_number1,
-                                        random_number2))
+        safe_arithmetic_execution(random_operation,
+                                  random_number1,
+                                  random_number2)
     # return
     # Attention! The result contains not only the right answer but also
     # the question so the engine function can render it
-    result = (question, arithmetic_execution_result)
+    result = (question, str(arithmetic_execution_result))
 
     return result
 
