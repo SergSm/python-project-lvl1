@@ -1,7 +1,5 @@
 """Main module for the game logic flow."""
 
-from . import shared_logic
-
 from brain_games.cli import ask
 
 
