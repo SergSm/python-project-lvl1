@@ -17,45 +17,25 @@ def get_question_and_right_answer():
     progression_step = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     start_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
+    arithm_progression = [start_number + progression_step*counter
+                   for counter in range(PROGRESSION_LENGTH)]
+
     position_of_missing_element = shared_logic.\
         get_random_number(0, PROGRESSION_LENGTH - 1)
-
-    arithm_progression = get_arithmetic_progression(PROGRESSION_LENGTH,
-                                                    progression_step,
-                                                    start_number)
 
     question = get_question(arithm_progression,
                             position_of_missing_element)
 
-    # get right answer
     right_answer = get_correct_answer(arithm_progression,
                                       position_of_missing_element)
 
-    # return
-    result = (question, right_answer)
+    result = (question, str(right_answer))
 
     return result
 
 
 def get_correct_answer(arithm_progression, position_of_missing_element):
     return arithm_progression[position_of_missing_element]
-
-
-def get_arithmetic_progression(length, step, start_number):
-
-    progression = []
-
-    # the simplest case with the only one number
-    if length == 1:
-        progression.append(start_number)
-        return progression
-
-    current_number = start_number
-    for x in range(1, length+1):
-        current_number += step
-        progression.append(current_number)
-
-    return progression
 
 
 def get_question(progression, exclude_element_index):
