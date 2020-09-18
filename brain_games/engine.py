@@ -40,6 +40,6 @@ def play(game):
                   '\'')
             print('Let\'s try again, ', username, '!')
             break
-
-    if win_counter >= NUMBER_OF_SUCCESSFUL_TRIES:  # win situation
+    else:
+        # all games sessions are successful
         print('Congratulations, ', username, '!')
