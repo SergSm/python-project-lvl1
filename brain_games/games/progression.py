@@ -5,7 +5,7 @@ from brain_games import shared_logic
 # game numbers range
 MIN_RANDOM = 1
 MAX_RANDOM = 10
-PROGRESSION_LENGTH = 10  # progression length
+PROGRESSION_LENGTH = 10
 
 
 DESCRIPTION = 'What number is missing in the progression?'
