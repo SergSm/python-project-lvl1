@@ -29,20 +29,11 @@ def get_question_and_right_answer():
 
 def is_prime(number):
 
-    if number <= 1:  # prime number is always greater than 1
-        # 0 and negative numbers are not prime numbers
-        number_is_divisible = False
+    if number <= 1:  # edge case
+        return False
     else:
-        number_is_divisible = not is_divisible(number)
-
-    return number_is_divisible
-
-
-def is_divisible(number):
-
-    # the destination range won't have delimeter greated than number / 2
-    for i in range(2, int(number/2)+1):
-        if (number % i) == 0:
-            return True
-
-    return False
+        # the destination range won't have delimeter greated than number / 2
+        for i in range(2, int(number / 2) + 1):
+            if (number % i) == 0:
+                return False
+        return True
