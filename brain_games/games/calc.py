@@ -60,3 +60,11 @@ def calculate(operation, number1, number2):
         raise ValueError('unknown operation ', operation)
 
     return result
+
+
+def it_casts_to_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
