@@ -31,14 +31,20 @@ def get_question_and_right_answer():
     return result
 
 
-def safe_arithmetic_execution(operation, *numbers):
-    """applies operation to numbers*"""
+def safe_arithmetic_execution(operation, *symbols):
+    """applies operation to symbols which are supposed to be numbers*"""
 
-    accumulator = numbers[0]  # assign to the very first value
+    accumulator = symbols[0]  # assign to the very first value
 
-    for number in numbers[1:]:
-        if shared_logic.it_casts_to_int(number):  # check if param casts to int
-            accumulator = calculate(operation, accumulator, number)
+    for character in symbols[1:]:
+        # check if character casts to int
+        # otherwise the exception will be invoked
+        try:
+            int(character)
+        except ValueError:
+            return False
+
+        accumulator = calculate(operation, accumulator, character)
 
     return accumulator
 
@@ -60,11 +66,3 @@ def calculate(operation, number1, number2):
         raise ValueError('unknown operation ', operation)
 
     return result
-
-
-def it_casts_to_int(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
