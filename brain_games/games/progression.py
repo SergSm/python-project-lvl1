@@ -38,7 +38,7 @@ def get_question(progression, exclude_element_index):
     question = ""
     for x in range(0, len(progression) - 1):
         if x == exclude_element_index:
-            question += '.. '
+            question += '.. '  # SPACE HERE!
         else:
             question += str(progression[x]) + ' '
 
