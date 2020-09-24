@@ -31,6 +31,7 @@ def play(game):
 
         if right_answer == user_answer:
             win_counter += 1
+            print("Correct!")
         else:  # lose situation
             print(' \'', user_answer,
                   '\' is wrong answer ;(. '

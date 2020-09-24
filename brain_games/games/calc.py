@@ -34,11 +34,11 @@ def get_question_and_right_answer():
 def safe_arithmetic_execution(operation, *symbols):
     """applies operation to symbols which are supposed to be numbers*"""
 
-    accumulator = symbols[0]  # assign to the very first value
+    # to be honest it's pretty neat but not
+    # a very easy readable code
+    [accumulator, *rest] = symbols
 
-    for character in symbols[1:]:
-        # check if character casts to int
-        # otherwise the exception will be invoked
+    for character in rest:
         try:
             int(character)
         except ValueError:
