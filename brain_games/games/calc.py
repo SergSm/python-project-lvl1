@@ -34,8 +34,6 @@ def get_question_and_right_answer():
 def safe_arithmetic_execution(operation, *symbols):
     """applies operation to symbols which are supposed to be numbers*"""
 
-    # to be honest it's pretty neat but not
-    # a very easy readable code
     [accumulator, *rest] = symbols
 
     for character in rest:
