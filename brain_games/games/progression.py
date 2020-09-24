@@ -41,6 +41,5 @@ def get_question(progression, exclude_element_index):
             question += '..' + ' '
         else:
             question += str(progression[x]) + ' '
-    question = question.rstrip()
 
-    return question
+    return question.rstrip()
