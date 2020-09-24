@@ -11,14 +11,11 @@ DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
 
 
 def get_question_and_right_answer():
-    # get question
     random_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     question = str(random_number)
 
-    # get right answer
     right_answer = 'yes' if random_number % 2 == 0 else 'no'
 
-    # return
     result = (question, right_answer)
 
     return result

@@ -11,21 +11,16 @@ DESCRIPTION = 'What is the result of the expression?'
 
 def get_question_and_right_answer():
 
-    # get question
     random_operation = choice(OPERATIONS)
     random_number1 = shared_logic.get_random_number(1, 20)
     random_number2 = shared_logic.get_random_number(1, 20)
 
     question = f'{random_number1} {random_operation} {random_number2}'
 
-    # get right answer
     arithmetic_execution_result = \
         safe_arithmetic_execution(random_operation,
                                   random_number1,
                                   random_number2)
-    # return
-    # Attention! The result contains not only the right answer but also
-    # the question so the engine function can render it
     result = (question, str(arithmetic_execution_result))
 
     return result

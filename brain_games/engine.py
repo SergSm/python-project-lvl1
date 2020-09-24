@@ -15,11 +15,11 @@ def play(game):
     :return:
     """
 
-    print(COMMON_INTRO_TEXT)  # constant intro
-    print(game.DESCRIPTION)  # show the task of the game
+    print(COMMON_INTRO_TEXT)
+    print(game.DESCRIPTION)
 
     username = ask("May I have your name? ")
-    print('Hello,', username)  # greetings
+    print('Hello,', username)
 
     win_counter = 0  # counts
     while win_counter < NUMBER_OF_SUCCESSFUL_TRIES:  # main loop

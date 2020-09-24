@@ -13,7 +13,6 @@ DESCRIPTION = 'What number is missing in the progression?'
 
 def get_question_and_right_answer():
 
-    # get question
     progression_step = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
     start_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
 
