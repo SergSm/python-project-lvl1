@@ -1,4 +1,4 @@
-"""Additional module for common functions used in games"""
+"""Random function wrapper"""
 
 
 import time

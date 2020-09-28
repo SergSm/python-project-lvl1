@@ -1,6 +1,6 @@
 """Check for parity."""
 
-from brain_games import shared_logic
+from brain_games import random_wrapper
 
 # game numbers range
 MIN_RANDOM = 1
@@ -11,7 +11,7 @@ DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".'
 
 
 def get_question_and_right_answer():
-    random_number = shared_logic.get_random_number(MIN_RANDOM, MAX_RANDOM)
+    random_number = random_wrapper.get_random_number(MIN_RANDOM, MAX_RANDOM)
     question = str(random_number)
 
     right_answer = 'yes' if random_number % 2 == 0 else 'no'
