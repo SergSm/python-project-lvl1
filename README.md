@@ -2,7 +2,7 @@
 
 # python-project-lvl1
 
-# Description
+## Description
 
 The Hexlet python developer project
 
@@ -10,24 +10,24 @@ The purpose of this project is to learn how to create python production ready co
 
 The project consists of several game logic modules in ```brain_games/games``` folder </p>
 Games run by scripts from ```brain_games/scripts``` folder </p>
-The main game loop is executed by start_game() function from ```brain_games/engine/main_logic.py``` module
+The main game loop is executed by play() function from ```brain_games/engine/main_logic.py``` module
 <p>
 
 The entry points of this project are specified in the pyproject.toml file
 in the section [tool.poetry.scripts]
 
-# Installation
+## Installation
 
 ```
 pip install --index-url https://test.pypi.org/simple/  --extra-index-url https://pypi.org/simple SergSm_brain_game
 ```
 
-## Installation ASCIInema
+### Installation ASCIInema
 
 [![asciicast](https://asciinema.org/a/yu7UB0AoATS93ELqHWuPuiddV.svg)](https://asciinema.org/a/yu7UB0AoATS93ELqHWuPuiddV)
 
 
-# How to run project
+## How to run project
 
 Any game may be run by using following respective commands:
 
@@ -40,7 +40,7 @@ brain-prime
 ```
 
 
-# "Parity check" game
+## "Parity check" game
 ______________________________________________________________________________
 
 *Win situation
@@ -53,7 +53,7 @@ ______________________________________________________________________________
 
 
 
-# "Calculator" game
+## "Calculator" game
 ______________________________________________________________________________
 
 *Win situation
@@ -67,7 +67,7 @@ ______________________________________________________________________________
 
 
 
-# "Greatest common divisor" game
+## "Greatest common divisor" game
 ______________________________________________________________________________
 
 *Win situation
@@ -81,7 +81,7 @@ ______________________________________________________________________________
 
 
 
-# "Brain progresssion" game
+## "Brain progresssion" game
 ______________________________________________________________________________
 
 *Win situation
@@ -94,7 +94,7 @@ ______________________________________________________________________________
 
 
 
-# "Brain prime" game
+## "Brain prime" game
 ______________________________________________________________________________
 
 *Win situation
